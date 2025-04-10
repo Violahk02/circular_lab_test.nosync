@@ -43,15 +43,30 @@ console.log(data);
           studerende, undervisere og medlemmer af samarbejdende institutioner.
           Circular Lab samarbejder på tværs af de andre labs på KEA.
         </p>
-        <!-- {
-          data.map((event) => (
-            <article>
-              <h2>{event.event_title}</h2>
-              <h3>{event.event_description}</h3>
-              <p>{event.event_date}</p>
-            </article>
-          ))
-        } -->
+        <p>
+          Circular Lab er et multifunktionelt rum, der indbyder til at udforske
+          og undersøge nye cirkulære forretningsmodeller og hvordan vi designer
+          cirkulære produkter. Gennem workshops, foredrag, community caféer og
+          virksomhedsbesøg åbner vi op for mulighederne der følger med den
+          cirkulære omstilling og hvordan man kan udforske dem igennem praksis
+          og teori. Lab’et bruges til undervisning, workshops, arrangementer,
+          udstillinger og eksperimenter. Følg med i kalenderen for at se de
+          kommende events og happenings.
+        </p>
+
+        <div class="opslagstavle">
+          <div class="knap_t_events">
+            <a href="kalender.astro" class="knap" '>Se vores events</a>
+          </div>
+          <img src="../img/img2_forside.webp" alt="img2" class="img2" />
+          <img src="../img/img1_forside.webp" alt="img1" class="img1" />
+          <img src="../img/img3_forside.webp" alt="img3" class="img3" />
+          <img
+            src="../img/img_praktisk.webp"
+            alt="img_praktisk"
+            class="img_praktisk"
+          />
+        </div>
       </main>
     </body>
   </html>
@@ -61,6 +76,60 @@ console.log(data);
   .introduktion {
     font-family: "Roboto Condensed_ExtraLight", sans-serif;
     font-size: 30px;
-    margin: 2rem;
+    margin: 1rem 2rem;
+  }
+  p {
+    margin: 0.5rem 2rem;
+  }
+  .opslagstavle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .knap_t_events {
+    font-family: "Roboto Condensed_Black", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    background-color: var(--third-color);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 15px;
+    margin: 2rem 3rem;
+    grid-column: span 2;
+    grid-row: 1;
+  }
+  .knap_t_events:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+  }
+  .knap {
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 20px;
+    font-family: "Roboto Condensed_Black", sans-serif;
+  }
+  .knap:hover {
+    color: var(--primary-color);
+    transition: 0.3s;
+  }
+  .img1 {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 3rem;
+  }
+  .img2 {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 3rem;
+  }
+  .img3 {
+    grid-column: 3;
+    grid-row: 2;
+    margin: 3rem;
+  }
+  .img_praktisk {
+    grid-column: 2;
+    grid-row: 3;
+    margin: 3rem;
   }
 </style>
