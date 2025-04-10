@@ -4,3 +4,54 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* FONTE
+---------------------------------- */
+@font-face {
+  font-family: "Roboto Condensed_Black";
+  src:
+    url("fonts/roboto_fonte/RobotoCondensed-Black.woff2") format("woff2"),
+    url("fonts/roboto_fonte/RobotoCondensed-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed_ExtraLight";
+  src:
+    url("fonts/roboto_fonte/RobotoCondensed-ExtraLight.woff2") format("woff2"),
+    url("fonts/roboto_fonte/RobotoCondensed-ExtraLight.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed_Light";
+  src:
+    url("fonts/roboto_fonte/RobotoCondensed-Light.woff2") format("woff2"),
+    url("fonts/roboto_fonte/RobotoCondensed-Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* ----------------------------------  */
+
+/* COLORS */
+html {
+  --primary-color: rgb(255, 247, 240);
+  --secondary-color: rgb(35, 50, 73);
+  --third-color: rgb(255, 103, 31);
+}
+
+h1,
+h2 {
+  font-family: "Roboto Condensed_Black";
+  font-weight: 900;
+  color: var(--secondary-color);
+}
+body {
+  background-color: var(--primary-color);
+}
+h1 {
+  font-family: "Roboto Condensed Black", sans-serif;
+}
+p {
+  color: var(--secondary-color);
+}

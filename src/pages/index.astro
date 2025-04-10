@@ -1,6 +1,6 @@
 ---
 //@ts-nocheck
-
+import "../styles/general.css";
 import Layout from "../layouts/Layout.astro";
 
 const url =
@@ -13,21 +13,54 @@ const options = {
     apikey: key,
   },
 };
-
 const data = await fetch(url, options).then((res) => res.json());
 
 console.log(data);
 ---
 
 <Layout>
-  <h1>Min side</h1>
-  {
-    data.map((event) => (
-      <article>
-        <h1>{event.event_title}</h1>
-        <h2>{event.event_description}</h2>
-        <p>{event.event_date}</p>
-      </article>
-    ))
-  }
+  <html lang="da">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="stylesheet" href="../styles/general.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gasoek+One&family=Hanalei&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Protest+Strike&family=Quicksand:wght@300..700&family=Rasa:ital,wght@0,300..700;1,300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rozha+One&family=Rubik+Dirt&family=Xanh+Mono:ital@0;1&display=swap"
+        rel="stylesheet"
+      />
+      <title>Forside</title>
+    </head>
+    <body>
+      <section class="hero"></section>
+      <main>
+        <p class="introduktion">
+          Circular Lab er et community lab med fokus på cirkulære
+          forretningsmodeller, strategier og design. Circular Lab er for KEAs
+          studerende, undervisere og medlemmer af samarbejdende institutioner.
+          Circular Lab samarbejder på tværs af de andre labs på KEA.
+        </p>
+        <!-- {
+          data.map((event) => (
+            <article>
+              <h2>{event.event_title}</h2>
+              <h3>{event.event_description}</h3>
+              <p>{event.event_date}</p>
+            </article>
+          ))
+        } -->
+      </main>
+    </body>
+  </html>
 </Layout>
+
+<style>
+  .introduktion {
+    font-family: "Roboto Condensed_ExtraLight", sans-serif;
+    font-size: 30px;
+    margin: 2rem;
+  }
+</style>
