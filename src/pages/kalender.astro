@@ -1,3 +1,39 @@
 ---
+//@ts-nocheck
 
+const url =
+  "https://uagccnhppkfznxjxjhqo.supabase.co/rest/v1/kalender?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhZ2NjbmhwcGtmem54anhqaHFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc2NzMsImV4cCI6MjA1OTg0MzY3M30.ttsCu__TMxLQcc1YtwCLSpgQ5X758Qq8fFknzUhoHFI";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+
+console.log(data);
+import "../styles/general.css";
+import Layout from "../layouts/Layout.astro";
+import Kalendercard from "../components/Kalendercard.astro";
 ---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <Layout>
+    <body>
+      <h1>Kalender</h1>
+
+      <main>
+        {data.map((event) => <Kalendercard event={event} />)}
+      </main>
+    </body>
+  </Layout>
+</html>
