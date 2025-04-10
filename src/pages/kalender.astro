@@ -18,6 +18,8 @@ console.log(data);
 import "../styles/general.css";
 import Layout from "../layouts/Layout.astro";
 import Kalendercard from "../components/Kalendercard.astro";
+import Maenedfilter from "../components/Maenedfilter.astro";
+import Kategorifilter from "../components/Kategorifilter.astro";
 ---
 
 <!doctype html>
@@ -29,9 +31,21 @@ import Kalendercard from "../components/Kalendercard.astro";
   </head>
   <Layout>
     <body>
-      <h1>Kalender</h1>
-
       <main>
+        <h1>Kalender</h1>
+        <p>
+          Dyk ned i vores kalender og se, hvad der venter forude. Vi har
+          sammensat et program fyldt med inspirerende events, engagerende
+          workshops og indsigtsfulde foredrag – alt sammen med fokus på
+          bæredygtighed, innovation og fællesskab.
+        </p>
+        <p>
+          Uanset om du er her for at lære, netværke eller bare blive nysgerrig,
+          er du mere end velkommen. Find det event, der taler til dig – og bliv
+          en del af bevægelsen.
+        </p>
+        <Maenedfilter />
+        <Kategorifilter />
         {data.map((event) => <Kalendercard event={event} />)}
       </main>
     </body>
