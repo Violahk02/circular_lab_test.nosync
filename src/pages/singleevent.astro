@@ -1,0 +1,37 @@
+---
+//@ts-nocheck
+
+import Layout from "../layouts/Layout.astro";
+import Eventcontent from "../components/Eventcontent.astro";
+
+const url =
+  "https://uagccnhppkfznxjxjhqo.supabase.co/rest/v1/kalender?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhZ2NjbmhwcGtmem54anhqaHFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc2NzMsImV4cCI6MjA1OTg0MzY3M30.ttsCu__TMxLQcc1YtwCLSpgQ5X758Qq8fFknzUhoHFI";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+
+console.log(data);
+const event = data[0]; // eller find et bestemt event
+---
+
+<Layout>
+  <Eventcontent
+    title={event.event_title}
+    datetime={event.event_date}
+    description={event.event_description}
+    imageUrl={event.event_image}
+    info={{
+      hvor: event.event_location,
+      hvornår: event.event_time,
+      medbring: event.event_bring,
+      viSorgerFor: event.event_provide,
+    }}
+  />
+</Layout>
