@@ -5,16 +5,16 @@ const { event } = Astro.props;
 ---
 
 <article>
-  <h1>{new Date(event.event_date).getDate().toString().padStart(2, "0")}</h1>
-  <img src="../repaircafe_img.svg" alt="" />
   <div class="info">
+    <h1>{new Date(event.event_date).getDate().toString().padStart(2, "0")}</h1>
     <h2>{event.event_title}</h2>
-    <h3>{event.event_category}</h3>
+    <p class="kategori">{event.event_category}</p>
     <p>
       {event.event_start.slice(0, 5)} - {event.event_end.slice(0, 5)}
     </p>
     <a href="">Læs mere her</a>
   </div>
+  <img src="../repaircafe_img.svg" alt="" />
 </article>
 
 <style>
@@ -22,31 +22,39 @@ const { event } = Astro.props;
     background-color: #ff671f;
     border: none;
     border-radius: 20px;
-    padding: 10px;
+    padding: 5px;
     text-decoration: none;
     color: #233249;
+    font-family: "Roboto Condendensed_Black", sans-serif;
+    font-weight: 600;
   }
 
   h1 {
-    font-size: 80px;
-    padding-left: 5px;
+    font-size: 70px;
   }
-  h2,
+  h2 {
+    padding-bottom: 5px;
+    font-size: 18px;
+  }
   p {
     padding-bottom: 5px;
+    font-size: 14px;
   }
 
-  h3 {
+  .kategori {
     color: #ff671f;
     padding-bottom: 5px;
+    font-size: 16px;
   }
 
   article {
-    border-right: 2px solid black;
-    width: 239px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #233249;
   }
 
   .info {
     padding: 10px;
+    text-align: center;
   }
 </style>
