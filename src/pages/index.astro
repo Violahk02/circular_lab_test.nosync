@@ -54,103 +54,261 @@ console.log(data);
       />
       <img src="../img/img4_kort.webp" alt="img4_kort" class="img4_kort" />
     </div>
-    <style>
-      h1 {
-        font-size: 60px;
-        text-align: center;
-      }
-      .hero {
-        text-align: center;
-      }
-      .introduktion {
-        font-family: "Roboto Condensed_ExtraLight", sans-serif;
-        font-size: 20px;
-        margin: 1rem 2rem;
-      }
-      p {
-        margin: 0.5rem 2rem;
-      }
-      .opslagstavle {
-        margin: 10px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 25%);
-      }
-      .knap_t_events {
-        font-family: "Roboto Condensed_Black", sans-serif;
-        font-weight: 100;
-        font-size: 25px;
-        background-color: var(--third-color);
-        padding: 5px;
-        border-radius: 20px;
-        margin: 2rem 6rem;
-        display: flex;
-        justify-content: center; /* Centrerer horisontalt */
-        align-items: center; /* Centrerer vertikalt */
-      }
-      .knap_t_events:hover {
-        background-color: var(--secondary-color);
-        transition: 0.3s;
-      }
-      .knap {
-        text-decoration: none;
-        color: var(--secondary-color);
-        padding: 20px;
-        font-family: "Roboto Condensed_Black", sans-serif;
-      }
-      .knap:hover {
-        color: var(--primary-color);
-        transition: 0.3s;
-      }
-      img {
-        width: 100%;
-      }
-      .img1 {
-        grid-column: span 2;
-      }
-      .img2 {
-        grid-row: 2;
-      }
-      .img3 {
-        grid-column: 2;
-        grid-row: 2;
-        padding-top: 20px;
-      }
-      .img4_kort {
-        grid-column: 1;
-        grid-row: 4;
-        padding-top: 20px;
-      }
-      .img_praktisk {
-        grid-column: 2;
-        grid-row: 3;
-      }
-      /* DESKTOP FORMAT */
-      @media (min-width: 850px) {
-        h1 {
-          font-size: 200px;
-        }
-        .introduktion {
-          font-size: 30px;
-        }
-        p {
-          font-size: 20px;
-        }
-        .opslagstavle {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: repeat(4, 1fr);
-        }
-        .knap_t_events {
-          font-size: 30px;
-          display: inline-block;
-          padding: 15px;
-          margin: 2rem 3rem;
-        }
-        .knap {
-          padding: 20px;
-        }
-      }
-    </style>
+    <div class="orange_container">
+      <h2 class="dropdown_overskrift">Hvad tilbyder vi? // Circular Lab</h2>
+      <div class="dropdown_container">
+        <div class="dropdown">
+          <button class="dropdown-btn">Cirkulær vejledning</button>
+          <div class="dropdown-content">
+            <p>
+              Sidder du med et projekt/eller forløb, hvor I skal tænke
+              cirkulært? Er du i tvivl om, hvordan du designer dine produkter,
+              så de er optimeret til cirkulære forretningsmodeller? Så kom ned i
+              labbet og få råd og vejledning til dit projekt. Vi hjælper både
+              med materialer, design, forretningsmodeller, strategier og alt der
+              skal til for at skabe den bedste cirkularitet – er du i tvivl om
+              vi kan hjælpe med netop din udfordring, så kom forbi og lad os
+              undersøge det sammen. Vejledning i labbet er muligt i de bemandede
+              åbningstider (se kalender) eller send en mail til lab manager
+              Nikolaj Storm på circular@kea.dk og book en tid.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">Cirkulært iværksætteri</button>
+          <div class="dropdown-content">
+            <p>
+              Er du iværksætter med din egen virksomhed, eller en del af KEAs
+              Startup Hub, og ønsker at undersøge mulighederne for at gøre din
+              virksomhed cirkulær i tråd med ny lovgivning – så book en coaching
+              med Cirkulær lab manager Nikolaj Storm (circular@kea.dk). Sammen
+              kan vi analysere virksomheden og du kan få værktøjer og indsigter
+              i, hvordan du kan planlægge din cirkulære transition på sigt.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">Cirkulære workshops</button>
+          <div class="dropdown-content">
+            <p>
+              Er du underviser og har brug for et cirkulært indspark i et forløb
+              eller crash course for dine studerende uanset programområde? Er I
+              en gruppe studerende, der ønsker at øge jeres kendskab til
+              cirkularitet og cirkulære forretningsmodeller? Så har vi
+              mulighederne til jer. Circular Lab har forskellige workshops
+              baseret på materiale fra Regndans, Ellen McArthur Foundation og
+              Dansk Design Center. Vi kan facilitere workshops inden for mange
+              forskellige områder tilknyttet cirkularitet og vi kan skræddersy
+              workshops og foredrag specielt til jeres
+              undervisning/programområde – så både studerende og undervisere
+              bliver klædt godt på til en cirkulær fremtid.
+            </p>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-btn">Adgang til nyeste forskning</button>
+          <div class="dropdown-content">
+            <p>
+              Hos Circular Lab holder vi os opdaterede på den nyeste forskning
+              inden for cirkularitet. Mange virksomheder og brancher er netop i
+              gang med at implementere forskellige cirkulære
+              forretningsmodeller, og vi følger med for at kunne guide jer til
+              de bedste løsninger netop nu. Så har du brug for den nyeste viden
+              eller savner du noget forskning netop indenfor dit felt? Så kom
+              forbi labbet og hør nærmere.
+            </p>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-btn">Cirkulære foredrag</button>
+          <div class="dropdown-content">
+            <p>
+              Der sker rigtig meget inden for cirkularitet netop nu. Derfor
+              holder vi også løbende foredrag og events med relevante aktører
+              fra brancherne, så både studerende og medarbejdere kan få et
+              indblik i, hvordan vi arbejder med cirkularitet i praksis. Bliv
+              inspireret på tværs af brancher – sådan kan vi få nye ideer og
+              skabe nye sammenhænge til flere cirkulære modeller. Har du en
+              spændende tale,r du gerne vil have forbi? Så kom forbi og snak med
+              os i labbet og lad os se, hvad vi kan gøre. Hold dig opdateret i
+              kalenderen for kommende foredrag i labbet.
+            </p>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-btn">Circular skills</button>
+          <div class="dropdown-content">
+            <p>
+              Har du/I allerede nu spørgsmål omkring cirkularitet, eller har
+              du/I jeres eget cirkulære tiltag, I ønsker at teste af i labbet
+              eller har du/I input til aktiviteter i labbet, kan du/I altid
+              kontakte os på circular@kea.dk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Link til dit script -->
+    <script src="/forside.js" defer></script>
   </main>
 </Layout>
+
+<style>
+  h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+  .hero {
+    text-align: center;
+  }
+  .introduktion {
+    font-family: "Roboto Condensed_ExtraLight", sans-serif;
+    font-size: 20px;
+    margin: 1rem 2rem;
+  }
+  p {
+    margin: 0.5rem 2rem;
+  }
+
+  /* ------OPSLAGSTAVLE--------- */
+  .opslagstavle {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 25%);
+  }
+  .knap_t_events {
+    font-family: "Roboto Condensed_Black", sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+    background-color: var(--third-color);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 2rem 6rem;
+    display: flex;
+    justify-content: center; /* Centrerer horisontalt */
+    align-items: center; /* Centrerer vertikalt */
+  }
+  .knap_t_events:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+  }
+  .knap {
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 20px;
+    font-family: "Roboto Condensed_Black", sans-serif;
+  }
+  .knap:hover {
+    color: var(--primary-color);
+    transition: 0.3s;
+  }
+  img {
+    width: 100%;
+  }
+  .img1 {
+    grid-column: span 2;
+  }
+  .img2 {
+    grid-row: 2;
+  }
+  .img3 {
+    grid-column: 2;
+    grid-row: 2;
+    padding-top: 20px;
+  }
+  .img4_kort {
+    grid-column: 1;
+    grid-row: 4;
+    padding-top: 20px;
+  }
+  .img_praktisk {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  /* ------DROPDOWN CONTAINER--------- */
+  .orange_container {
+    background-color: var(--third-color);
+  }
+  .dropdown_container {
+    padding: 1rem 2rem;
+  }
+  .dropdown_overskrift {
+    padding: 20px 5px;
+    text-align: center;
+  }
+  .dropdown {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .dropdown-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: "Roboto Condensed_Black", sans-serif;
+    padding: 15px;
+    margin: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    padding: 10px;
+    margin: 0px 2px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    border-left: 3px solid var(--primary-color);
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+  /* DESKTOP FORMAT */
+  @media (min-width: 850px) {
+    h1 {
+      font-size: 200px;
+    }
+    .introduktion {
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
+    .opslagstavle {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+    .knap_t_events {
+      font-size: 30px;
+      display: inline-block;
+      padding: 15px;
+      margin: 2rem 3rem;
+    }
+    .knap {
+      padding: 20px;
+    }
+    /* DROPDOWN CONTAINER */
+    .dropdown_container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0rem 2rem;
+    }
+    .dropdown-btn {
+      font-size: 20px;
+      padding: 25px;
+      text-align: start;
+    }
+    .dropdown_overskrift {
+      font-size: 30px;
+      text-align: start;
+      padding: 2rem;
+    }
+  }
+</style>
