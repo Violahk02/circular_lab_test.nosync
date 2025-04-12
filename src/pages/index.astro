@@ -55,7 +55,7 @@ console.log(data);
       <img src="../img/img4_kort.webp" alt="img4_kort" class="img4_kort" />
     </div>
     <div class="orange_container">
-      <h2 class="dropdown_overskrift">Hvad tilbyder vi? // Circular Lab</h2>
+      <h2 class="mobil_overskrift">Hvad tilbyder vi? // Circular Lab</h2>
       <div class="dropdown_container">
         <div class="dropdown">
           <button class="dropdown-btn">Cirkulær vejledning</button>
@@ -150,6 +150,40 @@ console.log(data);
         </div>
       </div>
     </div>
+    <div class="materiale_bibliotek">
+      <div class="materiale_tekst">
+        <h2 class="mobil_overskrift">Udforsk et hav af materialer</h2>
+        <p>
+          Material ConneXion er et materialebibliotek, hvor du får den nyeste
+          viden indenfor materialer med 500 fysiske prøver og en tilhørende
+          database, som består af 10.000+ materialeprøver indenfor kategorierne
+          polymers, naturals, metals, glass, process, ceramics, cement-based og
+          carbon-based. Det er udvalgte prøver som er innovative, bæredygtige og
+          kommercielt tilgængelige materialer.
+        </p><br /><p>
+          Husk at besøge det fysiske Material ConneXion-bibliotek på Campus
+          Guldbergsgade! Du kan tilgå den digitale database som studerende og
+          underviser på KEA via KEAs Bibliotek
+        </p>
+        <div class="knap_t_materiale">
+          <p class="knap_tilmelding">Tilmeld dig Material ConneXion</p>
+        </div>
+      </div>
+      <div class="collage_mobil">
+        <img
+          src="../img/collage_mobil.webp"
+          alt="materiale_mobil"
+          class="img_materiale"
+        />
+      </div>
+      <div class="collage_desktop">
+        <img
+          src="../img/collage_desktop.webp"
+          alt="materiale_desktop"
+          class="img_materiale"
+        />
+      </div>
+    </div>
     <!-- Link til dit script -->
     <script src="/forside.js" defer></script>
   </main>
@@ -198,7 +232,7 @@ console.log(data);
   .knap {
     text-decoration: none;
     color: var(--secondary-color);
-    padding: 20px;
+    padding: 15px;
     font-family: "Roboto Condensed_Black", sans-serif;
   }
   .knap:hover {
@@ -235,7 +269,7 @@ console.log(data);
   .dropdown_container {
     padding: 1rem 2rem;
   }
-  .dropdown_overskrift {
+  .mobil_overskrift {
     padding: 20px 5px;
     text-align: center;
   }
@@ -256,7 +290,6 @@ console.log(data);
     font-size: 16px;
     cursor: pointer;
   }
-
   .dropdown-content {
     display: none;
     padding: 10px;
@@ -265,9 +298,45 @@ console.log(data);
     background-color: var(--primary-color);
     border-left: 3px solid var(--primary-color);
   }
-
   .dropdown.active .dropdown-content {
     display: block;
+  }
+  /* ---------MATERIALEBIBLIOTEK-------- */
+  .knap_t_materiale {
+    font-family: "Roboto Condensed_Black", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    background-color: var(--third-color);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 2rem 6rem;
+    display: flex;
+    justify-content: center; /* Centrerer horisontalt */
+    align-items: center; /* Centrerer vertikalt */
+  }
+  .knap_t_materiale:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+  }
+  .knap_tilmelding {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-family: "Roboto Condensed_Black", sans-serif;
+  }
+  .knap_tilmelding:hover {
+    color: var(--primary-color);
+    transition: 0.3s;
+  }
+  /* ------COLLAGE-------- */
+  .img_materiale {
+    width: 100%;
+  }
+  .collage_mobil {
+    margin: 0rem 2rem;
+    display: block;
+  }
+  .collage_desktop {
+    display: none;
   }
   /* DESKTOP FORMAT */
   @media (min-width: 850px) {
@@ -292,7 +361,7 @@ console.log(data);
       margin: 2rem 3rem;
     }
     .knap {
-      padding: 20px;
+      padding: 25px;
     }
     /* DROPDOWN CONTAINER */
     .dropdown_container {
@@ -309,6 +378,25 @@ console.log(data);
       font-size: 30px;
       text-align: start;
       padding: 2rem;
+    }
+    /* ------MATERIALE BIBLIOTEK------ */
+    .collage_mobil {
+      display: none;
+    }
+    .collage_desktop {
+      display: block;
+      order: 1;
+      padding: 1rem;
+    }
+    .materiale_bibliotek {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0rem 2rem;
+      padding: 0rem 2rem;
+    }
+    .materiale_tekst {
+      order: 2;
+      padding: 3rem 1rem;
     }
   }
 </style>
