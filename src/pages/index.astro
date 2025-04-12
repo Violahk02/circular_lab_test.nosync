@@ -19,129 +19,138 @@ console.log(data);
 ---
 
 <Layout>
-  <html lang="da">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link rel="stylesheet" href="../styles/general.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gasoek+One&family=Hanalei&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Protest+Strike&family=Quicksand:wght@300..700&family=Rasa:ital,wght@0,300..700;1,300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rozha+One&family=Rubik+Dirt&family=Xanh+Mono:ital@0;1&display=swap"
-        rel="stylesheet"
+  <section class="hero">
+    <h1>CIRCULAR LAB</h1>
+    <p class="hero">Her kommer en herosection</p>
+  </section>
+  <main>
+    <p class="introduktion">
+      Circular Lab er et community lab med fokus på cirkulære
+      forretningsmodeller, strategier og design. Circular Lab er for KEAs
+      studerende, undervisere og medlemmer af samarbejdende institutioner.
+      Circular Lab samarbejder på tværs af de andre labs på KEA.
+    </p>
+    <p>
+      Circular Lab er et multifunktionelt rum, der indbyder til at udforske og
+      undersøge nye cirkulære forretningsmodeller og hvordan vi designer
+      cirkulære produkter. Gennem workshops, foredrag, community caféer og
+      virksomhedsbesøg åbner vi op for mulighederne der følger med den cirkulære
+      omstilling og hvordan man kan udforske dem igennem praksis og teori.
+      Lab’et bruges til undervisning, workshops, arrangementer, udstillinger og
+      eksperimenter. Følg med i kalenderen for at se de kommende events og
+      happenings.
+    </p>
+    <div class="knap_t_events">
+      <a href="kalender.astro" class="knap" '>Se vores events</a>
+    </div>
+    <div class="opslagstavle">
+      <img src="../img/img2_forside.webp" alt="img2" class="img2" />
+      <img src="../img/img1_forside.webp" alt="img1" class="img1" />
+      <img src="../img/img3_forside.webp" alt="img3" class="img3" />
+      <img
+        src="../img/img_praktisk.webp"
+        alt="img_praktisk"
+        class="img_praktisk"
       />
-      <title>Forside</title>
-    </head>
-    <body>
-      <section class="hero">
-        <h1>CIRCULAR LAB</h1>
-        <p class="hero">Her kommer en herosection</p>
-      </section>
-      <main>
-        <p class="introduktion">
-          Circular Lab er et community lab med fokus på cirkulære
-          forretningsmodeller, strategier og design. Circular Lab er for KEAs
-          studerende, undervisere og medlemmer af samarbejdende institutioner.
-          Circular Lab samarbejder på tværs af de andre labs på KEA.
-        </p>
-        <p>
-          Circular Lab er et multifunktionelt rum, der indbyder til at udforske
-          og undersøge nye cirkulære forretningsmodeller og hvordan vi designer
-          cirkulære produkter. Gennem workshops, foredrag, community caféer og
-          virksomhedsbesøg åbner vi op for mulighederne der følger med den
-          cirkulære omstilling og hvordan man kan udforske dem igennem praksis
-          og teori. Lab’et bruges til undervisning, workshops, arrangementer,
-          udstillinger og eksperimenter. Følg med i kalenderen for at se de
-          kommende events og happenings.
-        </p>
-        <div class="knap_t_events">
-          <a href="kalender.astro" class="knap" '>Se vores events</a>
-        </div>
-        <div class="opslagstavle">
-          <img src="../img/img2_forside.webp" alt="img2" class="img2" />
-          <img src="../img/img1_forside.webp" alt="img1" class="img1" />
-          <img src="../img/img3_forside.webp" alt="img3" class="img3" />
-          <img
-            src="../img/img_praktisk.webp"
-            alt="img_praktisk"
-            class="img_praktisk"
-          />
-          <img src="../img/img4_kort.webp" alt="img4_kort" class="img4_kort" />
-        </div>
-      </main>
-    </body>
-  </html>
+      <img src="../img/img4_kort.webp" alt="img4_kort" class="img4_kort" />
+    </div>
+    <style>
+      h1 {
+        font-size: 60px;
+        text-align: center;
+      }
+      .hero {
+        text-align: center;
+      }
+      .introduktion {
+        font-family: "Roboto Condensed_ExtraLight", sans-serif;
+        font-size: 20px;
+        margin: 1rem 2rem;
+      }
+      p {
+        margin: 0.5rem 2rem;
+      }
+      .opslagstavle {
+        margin: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 25%);
+      }
+      .knap_t_events {
+        font-family: "Roboto Condensed_Black", sans-serif;
+        font-weight: 100;
+        font-size: 25px;
+        background-color: var(--third-color);
+        padding: 5px;
+        border-radius: 20px;
+        margin: 2rem 6rem;
+        display: flex;
+        justify-content: center; /* Centrerer horisontalt */
+        align-items: center; /* Centrerer vertikalt */
+      }
+      .knap_t_events:hover {
+        background-color: var(--secondary-color);
+        transition: 0.3s;
+      }
+      .knap {
+        text-decoration: none;
+        color: var(--secondary-color);
+        padding: 20px;
+        font-family: "Roboto Condensed_Black", sans-serif;
+      }
+      .knap:hover {
+        color: var(--primary-color);
+        transition: 0.3s;
+      }
+      img {
+        width: 100%;
+      }
+      .img1 {
+        grid-column: span 2;
+      }
+      .img2 {
+        grid-row: 2;
+      }
+      .img3 {
+        grid-column: 2;
+        grid-row: 2;
+        padding-top: 20px;
+      }
+      .img4_kort {
+        grid-column: 1;
+        grid-row: 4;
+        padding-top: 20px;
+      }
+      .img_praktisk {
+        grid-column: 2;
+        grid-row: 3;
+      }
+      /* DESKTOP FORMAT */
+      @media (min-width: 850px) {
+        h1 {
+          font-size: 200px;
+        }
+        .introduktion {
+          font-size: 30px;
+        }
+        p {
+          font-size: 20px;
+        }
+        .opslagstavle {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+        }
+        .knap_t_events {
+          font-size: 30px;
+          display: inline-block;
+          padding: 15px;
+          margin: 2rem 3rem;
+        }
+        .knap {
+          padding: 20px;
+        }
+      }
+    </style>
+  </main>
 </Layout>
-
-<style>
-  h1 {
-    font-size: 200px;
-    text-align: center;
-  }
-  .hero {
-    text-align: center;
-  }
-  .introduktion {
-    font-family: "Roboto Condensed_ExtraLight", sans-serif;
-    font-size: 30px;
-    margin: 1rem 2rem;
-  }
-  p {
-    margin: 0.5rem 2rem;
-  }
-  .opslagstavle {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-  .knap_t_events {
-    font-family: "Roboto Condensed_Black", sans-serif;
-    font-weight: 100;
-    font-size: 30px;
-    background-color: var(--third-color);
-    border-radius: 10px;
-    display: inline-block;
-    padding: 15px;
-    margin: 2rem 3rem;
-  }
-  .knap_t_events:hover {
-    background-color: var(--secondary-color);
-    transition: 0.3s;
-  }
-  .knap {
-    text-decoration: none;
-    color: var(--secondary-color);
-    padding: 20px;
-    font-family: "Roboto Condensed_Black", sans-serif;
-  }
-  .knap:hover {
-    color: var(--primary-color);
-    transition: 0.3s;
-  }
-  .img1 {
-    grid-column: 3;
-    grid-row: 1;
-    margin: 3rem;
-  }
-  img {
-    width: 100%;
-  }
-  .img2 {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .img3 {
-    grid-column: 3;
-    grid-row: 2;
-  }
-  .img_praktisk {
-    grid-column: 2;
-    grid-row: 3;
-  }
-  .img4_kort {
-    grid-column: 1;
-    grid-row: 4;
-  }
-</style>
