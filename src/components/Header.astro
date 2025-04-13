@@ -1,0 +1,120 @@
+---
+
+---
+
+<header>
+  <nav>
+    <ul class="menu">
+      <li>
+        <a href="" class="button-link">Velkommen</a>
+      </li>
+      <li>
+        <a href="" class="button-link">Kalender</a>
+      </li>
+      <li>
+        <a href="" class="button-link">Projekter</a>
+      </li>
+    </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<script src="/src/scripts/menu.js"></script>
+
+<style>
+  /* Menu */
+  header {
+    position: relative;
+    background-color: #ff671f;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .button-link {
+    text-decoration: none; /* Removes the underline */
+    font-family: "Roboto Condendensed_Black", sans-serif;
+    font-size: 22px;
+    color: rgb(255, 247, 240);
+    padding: 40px;
+  }
+
+  .button-link:hover {
+    color: #233249;
+  }
+
+  /* Burgermenu */
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 247, 240);
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+  .burger {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    .menu {
+      display: none;
+    }
+    .burger {
+      display: block;
+    }
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+      /* Stregen bliver usynlig, når der bliver trykket, da den danner et kryds, kun med line 1 og 2 */
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    nav.active .menu {
+      display: block;
+      background-color: #ff671f;
+      position: absolute;
+      top: 94px;
+      left: 0;
+      width: 100%;
+
+      z-index: 4;
+    }
+
+    nav.active .menu li {
+      margin: 10px 20px;
+    }
+
+    nav.active .menu a {
+      font-size: 22px;
+    }
+  }
+</style>
