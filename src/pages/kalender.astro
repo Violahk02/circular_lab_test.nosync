@@ -20,6 +20,7 @@ import Layout from "../layouts/Layout.astro";
 import Kalendercard from "../components/Kalendercard.astro";
 import Maenedfilter from "../components/Maenedfilter.astro";
 import Kategorifilter from "../components/Kategorifilter.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -32,25 +33,39 @@ import Kategorifilter from "../components/Kategorifilter.astro";
   <Layout>
     <body>
       <main>
-        <h1>Kalender</h1>
-        <p>
-          Dyk ned i vores kalender og se, hvad der venter forude. Vi har
-          sammensat et program fyldt med inspirerende events, engagerende
-          workshops og indsigtsfulde foredrag – alt sammen med fokus på
-          bæredygtighed, innovation og fællesskab.
-        </p>
-        <p>
-          Uanset om du er her for at lære, netværke eller bare blive nysgerrig,
-          er du mere end velkommen. Find det event, der taler til dig – og bliv
-          en del af bevægelsen.
-        </p>
-        <div class="filter">
-          <Maenedfilter />
-          <Kategorifilter />
+        <div class="kalender-intro">
+          <div class="intro-content">
+            <h1>Kalender</h1>
+            <div class="filter1">
+              <Maenedfilter />
+              <Kategorifilter />
+            </div>
+          </div>
+
+          <div class="text">
+            <p>
+              Dyk ned i vores kalender og se, hvad der venter forude. Vi har
+              sammensat et program fyldt med inspirerende events, engagerende
+              workshops og indsigtsfulde foredrag – alt sammen med fokus på
+              bæredygtighed, innovation og fællesskab.
+            </p>
+            <p>
+              Uanset om du er her for at lære, netværke eller bare blive
+              nysgerrig, er du mere end velkommen. Find det event, der taler til
+              dig – og bliv en del af bevægelsen.
+            </p>
+          </div>
+          <div class="filter2">
+            <Maenedfilter />
+            <Kategorifilter />
+          </div>
         </div>
 
-        {data.map((event) => <Kalendercard event={event} />)}
+        <div class="kalender">
+          {data.map((event) => <Kalendercard event={event} />)}
+        </div>
       </main>
+      <Footer />
     </body>
   </Layout>
 </html>
@@ -66,10 +81,58 @@ import Kategorifilter from "../components/Kategorifilter.astro";
     margin: 15px;
   }
 
-  .filter {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
+  .filter1 {
+    display: none;
+  }
+  .filter2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
     margin-bottom: 50px;
+    gap: 40px;
+    margin: 20px;
+  }
+
+  @media (min-width: 850px) {
+    .filter1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      margin-bottom: 50px;
+      gap: 40px;
+      margin: 20px;
+      order: 2;
+    }
+
+    .filter2 {
+      display: none;
+    }
+    .kalender {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin: 40px;
+    }
+
+    .kalender-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      margin: 40px;
+      gap: 20px;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      p {
+        text-align: left;
+        font-size: 23px;
+      }
+    }
+
+    h1 {
+      font-size: 140px;
+      text-align: left;
+    }
   }
 </style>
