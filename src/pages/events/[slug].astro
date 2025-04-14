@@ -2,7 +2,9 @@
 //@ts-nocheck
 
 import Layout from "../../layouts/Layout.astro";
-import styles from "../styles/general.css";
+import "../../styles/general.css";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
 export async function getStaticPaths() {
   //   const response = await fetch('...');
   //   const data = await response.json();
@@ -32,11 +34,13 @@ const { event } = Astro.props;
 ---
 
 <Layout>
+  <Header />
   <article class="event">
-    <div class="text-section">
+    <div>
       <h1>{event.event_title}</h1>
+      <hr style="height: 1.5px; background-color: #ccc; border: none;" />
       <h3>{event.event_date}</h3>
-      <hr />
+
       <div class="headings">
         <h3>Beskrivelse</h3>
         <h3>Information</h3>
@@ -47,66 +51,85 @@ const { event } = Astro.props;
           <p>{event.event_description}</p>
           <button class="signup-btn">Tilmeld dig her</button>
         </div>
-        <hr />
-
+        <div style="width: 1.5px; background-color: #ccc;"></div>
         <div class="info">
-          <p><strong>Hvor:</strong> {event.event_location}</p>
+          <p>
+            <strong>Hvor:</strong>
+            {event.event_location}
+          </p>
+          <br />
           <p><strong>Hvornår:</strong> {event.event_time}</p>
+          <br />
           <p><strong>Medbring:</strong> {event.event_bring}</p>
+          <br />
           <p><strong>Vi sørger for:</strong> {event.event_provide}</p>
         </div>
       </div>
     </div>
-
-    <style>
-      .event {
-        gap: 2rem;
-        padding: 2rem;
-        color: #00142d;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-      }
-
-      .headings {
-        display: flex;
-        gap: 2rem;
-        margin-bottom: 0.5rem;
-        background-color: #f1602a;
-        padding: 10px;
-      }
-
-      .headings h3 {
-        flex: 1;
-        margin: 0;
-        color: #00142d;
-        font-size: 1.2rem;
-      }
-
-      .columns {
-        display: flex;
-        gap: 2rem;
-      }
-
-      .description,
-      .info {
-        flex: 2;
-        min-width: 200px;
-      }
-
-      .signup-btn {
-        margin-top: 1rem;
-        background-color: #f1602a;
-        padding: 0.6rem 1.2rem;
-        border: none;
-        border-radius: 6px;
-        font-weight: bold;
-        cursor: pointer;
-        align-self: center;
-      }
-
-      .signup-btn:hover {
-        background-color: #d44c1b;
-      }
-    </style>
+    <img src={`/events_img/${event.event_img}`} alt="Billede af event" />
   </article>
+  <hr
+    style="margin-left: 20px; margin-right: 20px; height: 1.5px; background-color: #ccc; border: none;"
+  />
+  <Footer />
 </Layout>
+
+<style>
+  h1 {
+    font-size: 100px;
+    color: rgb(35, 50, 73);
+  }
+  strong {
+    color: #00142d; /* mørkere eller kontrastfarve */
+  }
+  .event {
+    gap: 2rem;
+    padding: 2rem;
+    color: #00142d;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .headings {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: #ff671f;
+    padding: 10px;
+  }
+
+  .headings h3 {
+    flex: 1;
+    margin: 0;
+    color: #00142d;
+    font-size: 1.2rem;
+  }
+
+  .columns {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 20px;
+  }
+
+  .description,
+  .info {
+    flex: 2;
+    min-width: 200px;
+  }
+
+  .signup-btn {
+    margin-top: 1rem;
+    background-color: #ff671f;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem auto 0 auto; /* top, right, bottom, left */
+    display: block; /* sikrer centrering af knap */
+  }
+
+  .signup-btn:hover {
+    background-color: #ff671f;
+  }
+</style>
