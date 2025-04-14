@@ -1,0 +1,112 @@
+---
+const { title, datetime, description, imageUrl, info } = Astro.props;
+---
+
+<article class="event">
+  <div class="text-section">
+    <h1 class="event-title">{title}</h1>
+    <hr />
+    <p class="event-date">{datetime}</p>
+
+    <!-- Overskrifterne: side om side -->
+    <div class="headings">
+      <h3>Beskrivelse</h3>
+      <h3>Information</h3>
+    </div>
+
+    <!-- Indhold i to kolonner -->
+    <div class="columns">
+      <div class="description">
+        <p>{description}</p>
+        <button class="signup-btn">Tilmeld dig her</button>
+      </div>
+      <hr />
+
+      <div class="info">
+        <ul>
+          <li><strong>Hvor:</strong> {info.hvor}</li>
+          <li><strong>Hvornår:</strong> {info.hvornår}</li>
+          <li><strong>Medbring:</strong> {info.medbring}</li>
+          <li><strong>Vi sørger for:</strong> {info.viSorgerFor}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Billede ved siden af -->
+  <div class="image">
+    <img src={imageUrl} alt={`Billede til ${title}`} />
+  </div>
+</article>
+<hr style="width: 95%;" />
+
+<style>
+  .event {
+    gap: 2rem;
+    padding: 2rem;
+    color: #00142d;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .event-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .event-date {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .headings {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: #f1602a;
+    padding: 10px;
+  }
+
+  .headings h3 {
+    flex: 1;
+    margin: 0;
+    color: #00142d;
+    font-size: 1.2rem;
+  }
+
+  .columns {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .description,
+  .info {
+    flex: 2;
+    min-width: 200px;
+  }
+
+  .signup-btn {
+    margin-top: 1rem;
+    background-color: #f1602a;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .signup-btn:hover {
+    background-color: #d44c1b;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+</style>

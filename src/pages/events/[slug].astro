@@ -1,0 +1,112 @@
+---
+//@ts-nocheck
+
+import Layout from "../../layouts/Layout.astro";
+import styles from "../styles/general.css";
+export async function getStaticPaths() {
+  //   const response = await fetch('...');
+  //   const data = await response.json();
+
+  const url =
+    "https://uagccnhppkfznxjxjhqo.supabase.co/rest/v1/kalender?select=*";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhZ2NjbmhwcGtmem54anhqaHFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc2NzMsImV4cCI6MjA1OTg0MzY3M30.ttsCu__TMxLQcc1YtwCLSpgQ5X758Qq8fFknzUhoHFI";
+
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const data = await fetch(url, options).then((res) => res.json());
+  console.log(data);
+  return data.map((event) => {
+    return {
+      params: { slug: event.event_slug },
+      props: { event },
+    };
+  });
+}
+
+const { event } = Astro.props;
+---
+
+<Layout>
+  <article class="event">
+    <div class="text-section">
+      <h1>{event.event_title}</h1>
+      <h3>{event.event_date}</h3>
+      <hr />
+      <div class="headings">
+        <h3>Beskrivelse</h3>
+        <h3>Information</h3>
+      </div>
+
+      <div class="columns">
+        <div class="description">
+          <p>{event.event_description}</p>
+          <button class="signup-btn">Tilmeld dig her</button>
+        </div>
+        <hr />
+
+        <div class="info">
+          <p><strong>Hvor:</strong> {event.event_location}</p>
+          <p><strong>Hvornår:</strong> {event.event_time}</p>
+          <p><strong>Medbring:</strong> {event.event_bring}</p>
+          <p><strong>Vi sørger for:</strong> {event.event_provide}</p>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .event {
+        gap: 2rem;
+        padding: 2rem;
+        color: #00142d;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+      }
+
+      .headings {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 0.5rem;
+        background-color: #f1602a;
+        padding: 10px;
+      }
+
+      .headings h3 {
+        flex: 1;
+        margin: 0;
+        color: #00142d;
+        font-size: 1.2rem;
+      }
+
+      .columns {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .description,
+      .info {
+        flex: 2;
+        min-width: 200px;
+      }
+
+      .signup-btn {
+        margin-top: 1rem;
+        background-color: #f1602a;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        align-self: center;
+      }
+
+      .signup-btn:hover {
+        background-color: #d44c1b;
+      }
+    </style>
+  </article>
+</Layout>
