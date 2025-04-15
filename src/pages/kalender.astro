@@ -63,7 +63,13 @@ import Header from "../components/Header.astro";
             <Kategorifilter />
           </div>
         </div>
-
+        <div class="uge">
+          <p>Man</p>
+          <p>Tirs</p>
+          <p>Ons</p>
+          <p>Tors</p>
+          <p>Fre</p>
+        </div>
         <div class="kalender">
           {data.map((event) => <Kalendercard event={event} />)}
         </div>
@@ -97,7 +103,21 @@ import Header from "../components/Header.astro";
     margin: 20px;
   }
 
+  .uge {
+    display: none;
+  }
+
   @media (min-width: 850px) {
+    .uge {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-left: 40px;
+      margin-right: 40px;
+      p {
+        font-size: 32px;
+        text-align: left;
+      }
+    }
     .filter1 {
       display: flex;
       flex-direction: row;
@@ -114,7 +134,8 @@ import Header from "../components/Header.astro";
     .kalender {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      margin: 40px;
+      margin-left: 40px;
+      margin-right: 40px;
     }
 
     .kalender-intro {

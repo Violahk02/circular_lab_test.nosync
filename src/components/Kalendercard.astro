@@ -4,20 +4,33 @@ import "../styles/general.css";
 const { event } = Astro.props;
 ---
 
-<article>
+<article class={!event.event_title ? "empty" : ""}>
   <div class="info">
     <h1>{new Date(event.event_date).getDate().toString().padStart(2, "0")}</h1>
     <h2>{event.event_title}</h2>
     <p class="kategori">{event.event_category}</p>
     <p>
-      {event.event_start}-{event.event_end}
+      {event.event_start} - {event.event_end}
     </p>
-    <a href="">Læs mere her</a>
+    {
+      event.event_title && (
+        <a href={`/events/${event.event_slug}`}>Læs mere her</a>
+      )
+    }
   </div>
-  <img src={`/events_img/${event.event_img}`} alt="" />
+  <div>
+    <img src={`/events_img/${event.event_img}`} alt="" />
+  </div>
 </article>
 
 <style>
+  /* Skjul tomme events på mobilversionen (standard) */
+  article.empty {
+    display: none;
+  }
+  img {
+    width: 100%;
+  }
   a {
     background-color: #ff671f;
     border: none;
@@ -27,17 +40,23 @@ const { event } = Astro.props;
     color: #233249;
     font-family: "Roboto Condendensed_Black", sans-serif;
     font-weight: 600;
+    font-size: 14px;
+  }
+
+  a:hover {
+    background-color: #233249;
+    color: rgb(255, 247, 240);
   }
 
   h1 {
-    font-size: 70px;
+    font-size: 60px;
   }
   h2 {
     padding-bottom: 5px;
     font-size: 18px;
   }
   p {
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     font-size: 14px;
   }
 
@@ -51,19 +70,30 @@ const { event } = Astro.props;
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-top: 1px solid #233249;
-  }
-
-  .info {
-    padding: 10px;
     text-align: center;
   }
 
   @media (min-width: 850px) {
+    /* Viser tomme events på desktopversionen */
+    article.empty {
+      display: flex;
+    }
     article {
       display: flex;
       flex-direction: column;
       border-top: none;
       border-right: 1px solid #233249;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin-top: 15px;
     }
   }
 </style>
