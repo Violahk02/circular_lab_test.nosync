@@ -12,6 +12,9 @@
 
 <style>
   details {
+    /* position: absolute;
+    top: 50%;
+    left: 55%; */
     background-color: #fff7f0;
     border-bottom: 1px solid #233249;
     display: inline-block;
@@ -19,11 +22,20 @@
     p {
       font-size: 25px;
       color: #233249;
+      padding: 5px;
     }
   }
 
   summary {
     color: #233249;
     font-family: "Roboto Condendensed_Black", sans-serif;
+  }
+
+  @media (min-width: 850px) {
+    details {
+      position: absolute;
+      top: 42%;
+      left: 17%;
+    }
   }
 </style>

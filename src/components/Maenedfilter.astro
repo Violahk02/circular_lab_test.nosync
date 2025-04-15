@@ -81,18 +81,31 @@
 
 <style>
   details {
+    /* position: absolute;
+    top: 42%;
+    left: 15%; */
     background-color: #fff7f0;
     border-bottom: 1px solid #233249;
     display: inline-block;
     font-size: 25px;
+
     p {
       font-size: 25px;
       color: #233249;
+      padding: 5px;
     }
 
     summary {
       color: #233249;
       font-family: "Roboto Condendensed_Black", sans-serif;
+    }
+  }
+
+  @media (min-width: 850px) {
+    details {
+      position: absolute;
+      top: 42%;
+      left: 4%;
     }
   }
 </style>
