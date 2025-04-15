@@ -3,6 +3,8 @@
 
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/general.css";
+import Countdown from "../../components/Countdown.astro";
+
 import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
 export async function getStaticPaths() {
@@ -68,7 +70,7 @@ const { event } = Astro.props;
   <hr
     style="margin-left: 20px; margin-right: 20px; height: 1.5px; background-color: #ccc; border: none;"
   />
-
+  <Countdown />
   <Footer />
 </Layout>
 
