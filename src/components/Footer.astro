@@ -88,8 +88,8 @@
 <style>
   .footer_menu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 1rem;
     margin-top: 5rem;
     padding: 1rem;
     background-color: var(--secondary-color);
@@ -122,12 +122,15 @@
   }
   .ikoner {
     padding: 5px 2px;
-    width: 70%;
+    width: 40%;
+  }
+  .li_punkter {
   }
 
   @media (min-width: 850px) {
     .footer_menu {
       display: flex;
+      flex-direction: row;
       justify-content: center;
       gap: 5rem;
       margin-top: 3rem;
